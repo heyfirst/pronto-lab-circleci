@@ -4,7 +4,7 @@ jobs:
     docker:
       - image: circleci/python:3.6.1
 
-    working_directory: ~/pronto-bello-circleci
+    working_directory: ~/repo
 
     steps:
       - checkout
@@ -30,8 +30,9 @@ jobs:
             . venv/bin/activate
             flake8 fizzbuzz.py
 
-        - run:
-          name: run tests
+      - run:
+          name: run test
           command: |
             . venv/bin/activate
             python fizzbuzz.py
+          
